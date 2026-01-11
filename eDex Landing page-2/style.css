@@ -1,0 +1,740 @@
+/* =========================================
+   1. VARIABLES & ROOT SETTINGS
+   ========================================= */
+:root {
+    --primary: #6176F7; /* Hero BG */
+    --secondary: #FFC27A; /* Accents */
+    --secondary-dark: #FFA337;
+    --dark: #21212F;
+    --heading-color: #1B1D1F;
+    --text-gray: #6D737A;
+    --bg-light: #F1F2F8;
+    --bg-feedback: #F8F4FF;
+    --font-heading: 'Public Sans', sans-serif;
+    --font-serif: 'PT Serif', serif;
+}
+
+/* =========================================
+   2. GLOBAL RESET & BASE STYLES
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-heading);
+    color: var(--text-gray);
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+    color: var(--heading-color);
+    font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 100px;
+}
+
+/* =========================================
+   3. NAVBAR SECTION
+   ========================================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.logo {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 700;
+    font-size: 48px;
+    color: #FFFFFF;
+}
+
+.e {
+    color: #FFC27A;
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links a {
+    color: #fff;
+    font-weight: 500;
+}
+
+.nav-links a.active {
+    color: var(--secondary);
+}
+
+/* Login Buttons */
+.loginButton {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.locklogin {
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.lockImage {
+    width: 20px;
+    margin-right: 8px;
+}
+
+.loginButton a {
+    color: white;
+    text-decoration: none;
+}
+
+.buttonleft {
+    margin-left: 24px;
+    padding: 12px 24px;
+    background: linear-gradient(to bottom, #FFC27A, #FFA337);
+    border-radius: 100px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* =========================================
+   4. HERO SECTION
+   ========================================= */
+.hero-section {
+    background-color: var(--primary);
+    padding-top: 150px;
+    padding-bottom: 250px;
+    position: relative;
+}
+
+.hero-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-content {
+    max-width: 680px;
+}
+
+.sub-heading {
+    color: var(--secondary);
+    font-weight: 600;
+    font-size: 24px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 {
+    font-size: 40px;
+    line-height: 72px;
+    color: #fff;
+    margin-bottom: 50px;
+    max-width: 580px; 
+}
+
+/* Underline Vectors */
+.u-line1 {
+    position: relative;
+    display: inline-block;
+}
+
+.u-line1::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 10.5px;
+    background: url("image_png/Vector 1.png") no-repeat center;
+    background-size: contain;
+}
+
+.u-line2 {
+    position: relative;
+    display: inline-block;
+}
+
+.u-line2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 10.5px;
+    background: url("image_png/Vector 2.png") no-repeat center;
+    background-size: contain;
+    pointer-events: none;
+}
+
+.hero-content p {
+    color: #CFD3D6;
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+/* Search Bar */
+.search-bar {
+    background: #fff;
+    padding: 10px;
+    border-radius: 1000px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 648px;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    padding: 0 24px;
+    width: 100%;
+    font-size: 16px;
+}
+
+.search-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #FFC27A 0%, #FFA337 100%);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.hero-image img {
+    max-width: 100%;
+}
+
+/* =========================================
+   5. FUNFACTS (STATS) SECTION
+   ========================================= */
+.funfacts {
+    position: relative;
+    margin-top: -100px;
+    z-index: 5;
+    margin-bottom: 100px;
+    padding: 50px;
+    background: #f9f8f8;
+}
+
+.funfacts-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.fact-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.icon-box {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: #fff;
+}
+
+/* Fact Gradients */
+.green-grad { background: linear-gradient(180deg, #2AF9B1 0%, #20B486 100%); }
+.purple-grad { background: linear-gradient(180deg, #A988F9 0%, #6D3AE9 100%); }
+.red-grad { background: linear-gradient(180deg, #FFA4AF 0%, #EE455A 100%); }
+.blue-grad { background: linear-gradient(180deg, #92DAF0 0%, #21C9FF 100%); }
+
+.fact-text h3 { font-size: 32px; }
+.fact-text p { font-size: 20px; color: var(--text-gray); }
+
+/* =========================================
+   6. COMMON SECTION HEADERS
+   ========================================= */
+.section-header {
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-size: 56px;
+    color: var(--dark);
+}
+
+.section-header p {
+    font-size: 20px;
+    color: var(--text-gray);
+    margin-top: 20px;
+}
+
+.colorblue {
+    color: #1264a2;
+}
+
+/* =========================================
+   7. COURSES SECTION
+   ========================================= */
+.courses {
+    margin-bottom: 100px;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.course-card {
+    background: #fff;
+    border-radius: 24px;
+    padding: 16px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+}
+
+.card-image {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.card-image img {
+    width: 100%;
+    display: block;
+}
+
+.tag {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 500;
+    color: #1B1D1F;
+}
+
+.rating {
+    color: #FFC27A;
+    margin-bottom: 12px;
+}
+
+.rating span {
+    color: var(--text-gray);
+    margin-left: 8px;
+}
+
+.card-content h3 {
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E7E9EB;
+    padding-top: 16px;
+}
+
+.price {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1B1D1F;
+}
+
+.arrow-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background: rgba(255, 194, 122, 0.12);
+    color: var(--heading-color);
+}
+
+.arrow-btn.active {
+    background: linear-gradient(180deg, #FFC27A 0%, #FFA337 100%);
+    color: #fff;
+}
+
+/* Pagination Dots */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 40px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background: #CFD3D6;
+    border-radius: 50%;
+}
+
+.dot.active {
+    background: var(--secondary);
+}
+
+/* =========================================
+   8. CATEGORIES SECTION
+   ========================================= */
+.categories {
+    background: rgba(231, 233, 235, 0.5);
+    padding: 100px 0;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.cat-card {
+    background: #fff;
+    border-radius: 22px;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cat-card.active, .cat-card:hover {
+    border: 2px solid var(--secondary);
+    box-shadow: 0px 12px 48px rgba(255, 194, 122, 0.26);
+}
+
+.cat-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #1B1D1F;
+}
+
+.cat-arrow {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.cat-card.active .cat-arrow {
+    background: var(--secondary);
+    color: #fff;
+}
+
+/* =========================================
+   9. INSTRUCTORS SECTION
+   ========================================= */
+.instructors {
+    padding: 100px 0;
+}
+
+.instructor-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.instructor-card {
+    text-align: center;
+    background: #fff;
+    border-radius: 24px;
+    padding: 16px;
+    box-shadow: 0 3px 12px rgba(75, 75, 75, 0.08);
+}
+
+.instructor-card img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.instructor-card h4 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+/* =========================================
+   10. FEEDBACK SECTION
+   ========================================= */
+.feedback {
+    background: var(--bg-feedback);
+    padding: 100px 0;
+}
+
+.feedback-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.feedback-card {
+    background: #fff;
+    padding: 32px;
+    border-radius: 30px;
+}
+
+.feedback-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.user-info {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.user-info img {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+
+.quote-icon {
+    font-size: 40px;
+    color: var(--secondary);
+}
+
+/* =========================================
+   11. CALL TO ACTION (CTA) SECTION
+   ========================================= */
+.cta {
+    padding: 100px 0;
+}
+
+.cta-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.cta-image img {
+    max-width: 100%;
+}
+
+.cta-content h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.cta-content h3 {
+    font-size: 24px;
+    font-weight: 400;
+    color: #52565C;
+    margin-bottom: 24px;
+}
+
+.signup-btn2 {
+    display: inline-block;
+    padding: 15px 35px;
+    background: linear-gradient(180deg, #FFC27A 0%, #FFA337 100%);
+    color: white;
+    border-radius: 100px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+/* =========================================
+   12. FOOTER SECTION
+   ========================================= */
+footer {
+    background: var(--dark);
+    padding: 100px 0;
+    color: #fff;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+    gap: 40px;
+}
+
+.footer_edex_e {
+    color: #FFC27A;
+}
+
+.footer-col h4 {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 24px;
+}
+
+.footer-col p {
+    color: #E7E9EB;
+    margin-bottom: 12px;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+    color: #CFD3D6;
+}
+
+/* Social Media Icons */
+.socials {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.socials a {
+    width: 48px;
+    height: 48px;
+    background: #F1F2F8;
+    color: #3461FD;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.socials a:hover {
+    background: var(--secondary);
+    color: #fff;
+}
+
+/* Subscribe Form */
+.subscribe-form {
+    display: flex;
+    background: #fff;
+    padding: 6px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.subscribe-form input {
+    border: none;
+    outline: none;
+    padding: 10px;
+    width: 100%;
+}
+
+.subscribe-form button {
+    background: linear-gradient(180deg, #FFC27A 0%, #FFA337 100%);
+    border: none;
+    border-radius: 100px;
+    padding: 10px 20px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+/* =========================================
+   </> RESPONSIVE DESIGN (MEDIA QUERIES)***
+   ========================================= */
+
+/* Desktop & Tablets (Under 1200px) */
+@media (max-width: 1200px) {
+    .container { padding: 0 40px; }
+    .hero-content h1 { font-size: 40px; line-height: 1.2; }
+    .category-grid { grid-template-columns: repeat(3, 1fr); }
+    .instructor-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Mobile & Tablets (Under 992px) */
+@media (max-width: 992px) {
+    .navbar { position: relative; background: var(--primary); padding: 20px 40px; flex-direction: column; gap: 20px; }
+    .nav-links { gap: 20px; }
+    .hero-section { padding-top: 60px; padding-bottom: 150px; }
+    .hero-wrapper { flex-direction: column; text-align: center; }
+    .hero-content { margin-bottom: 50px; }
+    .search-bar { margin: 0 auto; }
+    .funfacts { margin-top: -80px; }
+    .funfacts-wrapper { flex-wrap: wrap; gap: 30px; }
+    .category-grid { grid-template-columns: repeat(2, 1fr); }
+    .feedback-grid { grid-template-columns: 1fr; }
+    .cta-wrapper { flex-direction: column; text-align: center; }
+}
+
+/* Small Mobile Devices (Under 768px) */
+@media (max-width: 768px) {
+    .container { padding: 0 20px; }
+    .section-header h2 { font-size: 32px; }
+    .nav-links { flex-wrap: wrap; justify-content: center; }
+    .loginButton { flex-direction: column; gap: 10px; }
+    .buttonleft { margin-left: 0; }
+    .hero-content h1 { font-size: 28px; line-height: 1.4; }
+    .fact-item { width: 100%; justify-content: flex-start; padding-left: 20px; }
+    .category-grid { grid-template-columns: 1fr; }
+    .instructor-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; text-align: center; }
+    .socials { justify-content: center; }
+    .subscribe-form { flex-direction: column; gap: 10px; background: transparent; padding: 0; }
+    .subscribe-form input { border-radius: 50px; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==================================================
+   </> eDEX figma Landing page-2 
+                          - Job (CST) __Enamul Hasan
+ ===================================================== */
